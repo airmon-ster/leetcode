@@ -37,3 +37,26 @@ var twoSum = function(nums, target) {
     }
     
 };
+
+/*
+OR use a map
+*/
+
+var twoSum = function(nums, target) {
+    
+    let solution = new Map()
+    for (x=0;x < nums.length;x++){
+        solution.set(nums[x],x)
+    }
+    console.log(solution)
+    for (x=0; x < nums.length;x++){
+        let complement = target - nums[x]
+        
+        if (solution.has(complement) && solution.get(complement) != x){
+            console.log(complement)
+            return [x, solution.get(complement)]
+        }
+    }
+                
+    
+};
